@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="10" style="-fx-padding: 20; -fx-background-color: #ADD8E6;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.managementsystem.WorkersManageBookingsController">
+    <Label style="-fx-font-size: 20; -fx-font-weight: bold;" text="Manage Bookings" />
+
+    <HBox alignment="CENTER_LEFT" spacing="10">
+        <Button onAction="#handleMarkReturned" style="-fx-background-color: #2ecc71; -fx-text-fill: white;" text="Mark as Returned" />
+        <Button onAction="#handleCancelBooking" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Cancel Booking" />
+        <Button onAction="#handleModifyBooking" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Modify Booking" />
+        <TextField fx:id="searchField" promptText="Search bookings..." />
+        <Button onAction="#handleSearch" style="-fx-background-color: #2ecc71;" text="Search" />
+    </HBox>
+
+    <TableView fx:id="bookingTable">
+        <columns>
+            <TableColumn fx:id="idColumn" prefWidth="50" text="ID" />
+            <TableColumn fx:id="customerColumn" prefWidth="150" text="Customer" />
+            <TableColumn fx:id="vehicleColumn" prefWidth="150" text="Vehicle" />
+            <TableColumn fx:id="startDateColumn" prefWidth="100" text="Start Date" />
+            <TableColumn fx:id="endDateColumn" prefWidth="100" text="End Date" />
+            <TableColumn fx:id="amountColumn" prefWidth="80" text="Amount" />
+            <TableColumn fx:id="statusColumn" prefWidth="80" text="Status" />
+        </columns>
+    </TableView>
+</VBox>
