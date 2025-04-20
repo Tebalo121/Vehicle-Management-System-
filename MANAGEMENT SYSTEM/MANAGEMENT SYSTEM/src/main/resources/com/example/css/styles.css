@@ -1,0 +1,103 @@
+.root {
+    -fx-font-family: "Segoe UI", sans-serif;
+    -fx-font-size: 14px;
+    -fx-background-color: #f4f4f4;
+}
+
+.header-bar {
+    -fx-background-color: linear-gradient(to right, #6a1b9a, #8e24aa);
+    -fx-padding: 15;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 4, 0, 0, 2);
+}
+
+.header-bar.employee {
+    -fx-background-color: linear-gradient(to right, #1565c0, #1976d2);
+}
+
+.header-bar .label {
+    -fx-text-fill: white;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+}
+
+.sidebar {
+    -fx-background-color: #6a1b9a;
+    -fx-padding: 15;
+    -fx-spacing: 12;
+}
+
+.sidebar.employee {
+    -fx-background-color: #1e88e5;
+}
+
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-border-color: white;
+    -fx-border-width: 1;
+    -fx-border-radius: 5;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+    -fx-padding: 10 15;
+    -fx-font-size: 14px;
+    -fx-effect: dropshadow(gaussian, rgba(255,255,255,0.1), 0, 0, 0, 1);
+    -fx-transition: all 0.2s;
+}
+
+.nav-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.2);
+    -fx-border-color: #ffca28;
+    -fx-text-fill: #ffca28;
+}
+
+.content-pane {
+    -fx-background-color: #ffffff;
+    -fx-padding: 20;
+    -fx-border-radius: 6;
+}
+
+.action-button {
+    -fx-background-color: #43a047;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 8;
+    -fx-padding: 10 20;
+}
+
+.action-button:hover {
+    -fx-background-color: #388e3c;
+}
+
+.footer {
+    -fx-background-color: #fdd835;
+    -fx-padding: 10;
+    -fx-alignment: center;
+    -fx-text-fill: #333;
+    -fx-font-style: italic;
+}
+
+.dark {
+    -fx-background-color: #1e1e1e;
+    -fx-text-fill: #e0e0e0;
+}
+
+.dark .sidebar,
+.dark .header-bar {
+    -fx-background-color: #2a2a2a;
+}
+
+.dark .nav-button {
+    -fx-border-color: #bbb;
+    -fx-text-fill: #bbb;
+}
+
+.dark .nav-button:hover {
+    -fx-text-fill: #ffca28;
+    -fx-border-color: #ffca28;
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.dark .footer {
+    -fx-background-color: #333;
+    -fx-text-fill: #bbb;
+}

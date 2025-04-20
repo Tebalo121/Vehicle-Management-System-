@@ -2,47 +2,54 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane prefHeight="262.0" prefWidth="560.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.managementsystem.WorkersDashboardController">
+<BorderPane prefHeight="262.0" prefWidth="560.0" stylesheets="@../css/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.managementsystem.WorkersDashboardController">
 
     <top>
-        <HBox alignment="CENTER_LEFT" spacing="20" style="-fx-background-color: purple; -fx-padding: 15;">
-            <Label prefHeight="35.0" prefWidth="425.0" style="-fx-text-fill: white; -fx-font-size: 24; -fx-font-weight: bold;" text="Employee Dashboard" />
-            <Label fx:id="welcomeLabel" style="-fx-text-fill: white; -fx-font-size: 16;" />
-            <Button onAction="#handleLogout" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Logout" HBox.hgrow="ALWAYS" />
+        <HBox alignment="CENTER_LEFT" spacing="20" styleClass="header-bar employee">
+            <Label styleClass="label" text="Employee Dashboard" />
+            <Label fx:id="welcomeLabel" />
+            <Pane />
+            <Button onAction="#handleLogout" styleClass="action-button" text="Logout" />
         </HBox>
     </top>
 
     <left>
-        <VBox minWidth="200" style="-fx-background-color: purple; -fx-padding: 15; -fx-spacing: 10;">
-            <Button maxWidth="Infinity" onAction="#showDashboard" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Dashboard" />
-            <Button maxWidth="Infinity" onAction="#showNewBooking" style="-fx-base: #2c3e50; -fx-text-fill: white;" text="New Booking" />
-            <Button maxWidth="Infinity" onAction="#showManageBookings" style="-fx-base: #2c3e50; -fx-text-fill: white;" text="Manage Bookings" />
-            <Button maxWidth="Infinity" onAction="#showProcessPayments" style="-fx-base: #2c3e50; -fx-text-fill: white;" text="Process Payments" />
-
-
-            <Button maxWidth="Infinity" onAction="#showRentalHistory" style="-fx-base: #2c3e50; -fx-text-fill: white;" text="Rental History" />
-            <Button maxWidth="Infinity" onAction="#showSupportCenter" style="-fx-base: #2c3e50; -fx-text-fill: white;" text="Support Center" />
-            <Button maxWidth="Infinity" onAction="#showShiftSummary" style="-fx-base: #2c3e50; -fx-text-fill: white;" text="Shift Summary" />
+        <VBox fx:id="sidebar" minWidth="200" style="-fx-background-color: purple;" styleClass="sidebar employee">
+            <Button onAction="#showDashboard" styleClass="nav-button" text="Dashboard" />
+            <Button onAction="#showNewBooking" styleClass="nav-button" text="New Booking" />
+            <Button onAction="#showManageBookings" styleClass="nav-button" text="Manage Bookings" />
+            <Button onAction="#showProcessPayments" styleClass="nav-button" text="Process Payments" />
+            <Button onAction="#showRentalHistory" styleClass="nav-button" text="Rental History" />
+            <Button onAction="#showSupportCenter" styleClass="nav-button" text="Support Center" />
+            <Button onAction="#showShiftSummary" styleClass="nav-button" text="Shift Summary" />
         </VBox>
     </left>
 
     <center>
-        <StackPane fx:id="contentPane">
-            <VBox alignment="CENTER" spacing="20" style="-fx-background-color: #ADD8E6;">
-                <Text style="-fx-font-size: 16; -fx-fill: #7f8c8d;" text="Select an option from the sidebar to navigation" />
+        <StackPane fx:id="contentPane" styleClass="content-pane">
+            <VBox fx:id="mageview" alignment="CENTER" spacing="20">
+                <Text style="-fx-fill: #7f8c8d;" text="Select an option from the sidebar to navigate" />
+            <ImageView fitHeight="201.0" fitWidth="322.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/istockphoto-2079987438-612x612.jpg" />
+               </image>
+            </ImageView>
             </VBox>
         </StackPane>
     </center>
 
     <bottom>
-        <HBox alignment="CENTER" prefHeight="56.0" prefWidth="560.0" style="-fx-background-color: yellow; -fx-padding: 10;">
-            <Label style="-fx-text-fill: #7f8c8d;" text="© 2025 Vehicle Rental System - Employee Panel" />
+        <HBox alignment="CENTER" styleClass="footer">
+            <Label text="© 2025 Vehicle Rental System - Employee Panel" />
         </HBox>
     </bottom>
 </BorderPane>
